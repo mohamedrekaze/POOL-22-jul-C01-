@@ -19,11 +19,11 @@ int ft_strlen(char *str)
 	{
 		i++;
 	}
-	return 0;
+	return i;
 }
 int main()
 {
-	char str[5] = "hala";
+	char str[] = "hala";
 	printf("%d ",ft_strlen(str));
 }
 
