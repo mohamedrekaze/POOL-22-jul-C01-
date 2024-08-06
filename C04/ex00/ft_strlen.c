@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 10:16:18 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/05 11:47:09 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/06 11:03:43 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
+int ft_strlen(char *str)
 {
-	int	y;
+	int i;
 
-	y = 0;
-	while (src[y] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		dest[y] = src[y];
-		y++;
+		i++;
 	}
-	dest[y] = '\0';
-	return (dest);
+	return 0;
 }
+int main()
+{
+	char str[5] = "hala";
+	printf("%d ",ft_strlen(str));
+}
+
