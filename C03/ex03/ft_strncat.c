@@ -19,21 +19,22 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0' && i < nb)
+	while (dest[i] != '\0' )
 	{
 		i++;
 	}
-	while(src[j] != '\0')
+	while(src[j] != '\0' && 0 < nb)
 	{
 		dest[i] = src[j];
 		j++;
 		i++;
+		nb--;
 	}
 	return dest;
 }
 int main(void)
 {
-	char dest[5] = "hello";
+	char dest[] = "hello";
 	char src[] = "hala";
 	printf("%s",ft_strncat(dest, src, 4));
 }
