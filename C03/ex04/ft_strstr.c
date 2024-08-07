@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 19:34:51 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 18:02:24 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/07 18:10:03 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/07 21:36:05 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
+	while (str[i] != '\0')
 	{
+		if (to_find[j] == str[i + j] && str[i + j] != '\0')
+		{
+			j++;
+		}
+		if (to_find == '\0')
+		{
+			return (str[i] + i);
+		}
 		i++;
+		j = 0;
 	}
-	while (src[j] != '\0' && j <= nb)
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
