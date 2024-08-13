@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_interative_power.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/11 17:43:19 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/13 12:32:12 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_iterative_power(int nb, int power)
 {
-	int	i;
+	int	r;
 
-	i = 0;
-	while (str[i] != '\0')
+	r = 1;
+	if (power == 0 && nb == 0)
 	{
-		i++;
+		return (1);
 	}
-	return (i);
+	else if (power < 0)
+	{
+		return (0);
+	}
+	else 
+	{
+		while (power > 0)
+		{
+			r *= nb;
+			power--;
+		}
+	}
+	return (r);
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}

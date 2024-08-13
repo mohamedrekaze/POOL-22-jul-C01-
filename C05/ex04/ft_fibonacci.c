@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/11 18:46:16 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/13 12:38:18 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_fibonacci(int index)
 {
-	int	i;
+	int	r;
+	int	a;
+	int	q;
 
-	i = 0;
-	while (str[i] != '\0')
+	a = 0;
+	q = 1;
+	r = a + q;
+	while (index > 0)
 	{
-		i++;
+		a = q;
+		q = r;
+		r = a + q;
+		index--;
 	}
-	return (i);
+	return (r);
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}

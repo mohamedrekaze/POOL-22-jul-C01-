@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/11 20:13:41 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/13 12:50:38 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_sqrt(int nb)
 {
-	int	i;
+	int	y;
 
-	i = 0;
-	while (str[i] != '\0')
+	y = 1;
+	if (nb <= 0)
 	{
-		i++;
+		return (0);
 	}
-	return (i);
+	while (1)
+	{
+		if ((y * y) == nb)
+		{
+			return (y);
+		}
+		if (y * y > nb)
+		{
+			return (0);
+		}
+		y++;
+	}
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}

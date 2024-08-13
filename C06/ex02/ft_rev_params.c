@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/12 10:22:20 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/12 14:28:46 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strlen(char *str)
+int	main(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
+	j = argc - 1;
 	i = 0;
-	while (str[i] != '\0')
+	while (j > 0)
 	{
-		i++;
+		while (argv[j][i] != '\0')
+		{
+			write (1, &argv[j][i], 1);
+			i++;
+		}
+		write (1, "\n", 1);
+		i = 0;
+		j--;
 	}
-	return (i);
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/11 17:43:23 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/13 12:00:19 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_iterative_factorial(int nb)
 {
-	int	i;
+	unsigned int	result;
 
-	i = 0;
-	while (str[i] != '\0')
+	result = 1;
+	while (nb > 0)
 	{
-		i++;
+		result *= nb;
+		nb--;
 	}
-	return (i);
+	if (nb < 0)
+	{
+		return (0);
+	}
+	return (result);
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}
+
+/*int main ()
+{
+	printf("%d", ft_iterative_factorial(3));
+}*/

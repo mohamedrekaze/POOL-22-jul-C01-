@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abagueri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abagueri <abagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 10:49:59 by abagueri          #+#    #+#             */
-/*   Updated: 2024/08/07 10:24:13 by abagueri         ###   ########.fr       */
+/*   Created: 2024/08/13 10:47:43 by abagueri          #+#    #+#             */
+/*   Updated: 2024/08/13 12:54:52 by abagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_is_prime(int nb)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (nb < 2)
+		return (0);
+	while (i < nb)
 	{
-		i++;
+		if ((nb % i) != 0)
+		{
+			i++;
+		}
+		else
+		{
+			return (0);
+		}
 	}
-	return (i);
+	return (1);
 }
-//int main()
-//{
-//	char str[] = "hala";
-//	printf("%d ",ft_strlen(str));
-//}
